@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
             saveCreds
         } = await useMultiFileAuthState(`./session`)
      try {
-            let XeonBotInc = makeWASocket({
+            let Wrld = makeWASocket({
                 auth: {
                     creds: state.creds,
                     keys: makeCacheableSignalKeyStore(state.keys, pino({level: "fatal"}).child({level: "fatal"})),
@@ -30,36 +30,36 @@ router.get('/', async (req, res) => {
                 logger: pino({level: "fatal"}).child({level: "fatal"}),
                 browser: [ "Ubuntu", "Chrome", "20.0.04" ],
              });
-             if(!XeonBotInc.authState.creds.registered) {
+             if(!Wrld.authState.creds.registered) {
                 await delay(1500);
                         num = num.replace(/[^0-9]/g,'');
-                            const code = await XeonBotInc.requestPairingCode(num)
+                            const code = await Wrld.requestPairingCode(num)
                  if(!res.headersSent){
                  await res.send({code});
                      }
                  }
-            XeonBotInc.ev.on('creds.update', saveCreds)
-            XeonBotInc.ev.on("connection.update", async (s) => {
+            Wrld.ev.on('creds.update', saveCreds)
+            Wrld.ev.on("connection.update", async (s) => {
                 const {
                     connection,
                     lastDisconnect
                 } = s;
                 if (connection == "open") {
                 await delay(10000);
-                    const sessionXeon = fs.readFileSync('./session/creds.json');
-                    const audioxeon = fs.readFileSync('./kongga.mp3');
-                    XeonBotInc.groupAcceptInvite("HxVuy25MtqoFOsYuyxBx0G");
-				let b64 = await Buffer.from(sessionXeon).toString("base64");
-      await XeonBotInc.sendMessage(XeonBotInc.user.id, { text: "IZUKU;;;" + b64 });
+                    const sessionizuku = fs.readFileSync('./session/creds.json');
+                    const izuku = fs.readFileSync('./Wrld.mp3');
+                    Wrld.groupAcceptInvite("HxVuy25MtqoFOsYuyxBx0G");
+				let b64 = await Buffer.from(sessionizuku).toString("base64");
+      await Wrld.sendMessage(Wrld.user.id, { text: "IZUKU;;;" + b64 });
       console.log(`SESSION_ID => ${b64}`);
-				XeonBotInc.sendMessage(XeonBotInc.user.id, {
-                    audio: audioxeon,
+				Wrld.sendMessage(Wrld.user.id, {
+                    audio: izuku,
                     mimetype: 'audio/mp4',
                     ptt: true
                 }, {
-                    quoted: xeonses
+                    quoted: black
                 });
-				await XeonBotInc.sendMessage(XeonBotInc.user.id, { text: `🛑Do not share this file with anybody\n\n© YOU CAN FOLLOW @wrld.iz on TIKTOK` }, {quoted: xeonses});
+				await Wrld.sendMessage(Wrld.user.id, { text: `🛑Do not share this file with anybody\n\n© YOU CAN FOLLOW @wrld.iz on TIKTOK` }, {quoted: black});
         await delay(100);
         return await removeFile('./session');
         process.exit(0)
