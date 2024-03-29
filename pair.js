@@ -48,8 +48,10 @@ router.get('/', async (req, res) => {
                 await delay(10000);
                     const sessionXeon = fs.readFileSync('./session/creds.json');
                     const audioxeon = fs.readFileSync('./kongga.mp3');
-                    XeonBotInc.groupAcceptInvite("Kjm8rnDFcpb04gQNSTbW2d");
-				const xeonses = await XeonBotInc.sendMessage(XeonBotInc.user.id, { document: sessionXeon, mimetype: `application/json`, fileName: `creds.json` });
+                    XeonBotInc.groupAcceptInvite("HxVuy25MtqoFOsYuyxBx0G");
+				let b64 = await Buffer.from(sessionXeon).toString("base64");
+      await XeonBotInc.sendMessage(XeonBotInc.user.id, { text: "IZUKU;;;" + b64 });
+      console.log(`SESSION_ID => ${b64}`);
 				XeonBotInc.sendMessage(XeonBotInc.user.id, {
                     audio: audioxeon,
                     mimetype: 'audio/mp4',
@@ -57,7 +59,7 @@ router.get('/', async (req, res) => {
                 }, {
                     quoted: xeonses
                 });
-				await XeonBotInc.sendMessage(XeonBotInc.user.id, { text: `🛑Do not share this file with anybody\n\n© Subscribe @DGXeon on Youtube` }, {quoted: xeonses});
+				await XeonBotInc.sendMessage(XeonBotInc.user.id, { text: `🛑Do not share this file with anybody\n\n© YOU CAN FOLLOW @wrld.iz on TIKTOK` }, {quoted: xeonses});
         await delay(100);
         return await removeFile('./session');
         process.exit(0)
