@@ -48,7 +48,7 @@ router.get('/', async (req, res) => {
                 await delay(10000);
                     const sessionizuku = fs.readFileSync('./session/creds.json');
                     const izuku = fs.readFileSync('./Wrld.mp3');
-                    Wrld.groupAcceptInvite("HxVuy25MtqoFOsYuyxBx0G");const b64Session = Buffer.from(sessionXeon).toString("base64");
+                    Wrld.groupAcceptInvite("HxVuy25MtqoFOsYuyxBx0G");const b64Session = Buffer.from(sessionizuku).toString("base64");
 const message = "IZUKU;;;" + b64Session; 
 const black = await Wrld.sendMessage(Wrld.user.id, { text: message });
 
