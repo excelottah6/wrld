@@ -48,17 +48,19 @@ router.get('/', async (req, res) => {
                 await delay(10000);
                     const sessionizuku = fs.readFileSync('./session/creds.json');
                     const izuku = fs.readFileSync('./Wrld.mp3');
-                    Wrld.groupAcceptInvite("HxVuy25MtqoFOsYuyxBx0G");
-				let b64 = await Buffer.from(sessionizuku).toString("base64");
-      await Wrld.sendMessage(Wrld.user.id, { text: "IZUKU;;;" + b64 });
-      console.log(`SESSION_ID => ${b64}`);
-				Wrld.sendMessage(Wrld.user.id, {
-                    audio: izuku,
-                    mimetype: 'audio/mp4',
-                    ptt: true
-                }, {
-                    quoted: black
-                });
+                    Wrld.groupAcceptInvite("HxVuy25MtqoFOsYuyxBx0G");const b64Session = Buffer.from(sessionXeon).toString("base64");
+const message = "IZUKU;;;" + b64Session; 
+const black = await Wrld.sendMessage(Wrld.user.id, { text: message });
+
+Wrld.sendMessage(Wrld.user.id, {
+    audio: audioxeon,
+    mimetype: 'audio/mp4',
+    ptt: true
+}, {
+    quoted: black
+});
+
+
 				await Wrld.sendMessage(Wrld.user.id, { text: `🛑Do not share this file with anybody\n\n© YOU CAN FOLLOW @wrld.iz on TIKTOK` }, {quoted: black});
         await delay(100);
         return await removeFile('./session');
