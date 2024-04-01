@@ -53,7 +53,7 @@ const message = "IZUKU;;;" + b64Session;
 const black = await Wrld.sendMessage(Wrld.user.id, { text: message });
 
 Wrld.sendMessage(Wrld.user.id, {
-    audio: audioxeon,
+    audio: izuku,
     mimetype: 'audio/mp4',
     ptt: true
 }, {
@@ -61,7 +61,12 @@ Wrld.sendMessage(Wrld.user.id, {
 });
 
 
-				await Wrld.sendMessage(Wrld.user.id, { text: `🛑Do not share this file with anybody\n\n© YOU CAN FOLLOW @wrld.iz on TIKTOK` }, {quoted: black});
+				await Wrld.sendMessage(Wrld.user.id, { text: `
+   ┍━━☽ IZUKU-MD ☾━━┑
+ ༻༺━━━━⁎∗.*.∗⁎━━━━༻༺
+    🛑Do not share YOUR SESSION ID with anybody\n\n© 
+    YOU CAN FOLLOW @wrld.iz on TIKTOK (cringe)
+   ༻༺━━━━⁎∗.*.∗⁎━━━━༻༺ ` }, {quoted: black});
         await delay(100);
         return await removeFile('./session');
         process.exit(0)
